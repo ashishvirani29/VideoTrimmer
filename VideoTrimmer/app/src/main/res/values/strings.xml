@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VideoTrimmer</string>
+    <!--video_audio_trimmer-->
+    <string name="short_seconds">sec</string>
 </resources>

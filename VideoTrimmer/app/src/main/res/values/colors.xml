@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--video_audio_trimmer-->
+    <color name="seek_progress">#ffffff</color>
+    <color name="backgroundseek_progress">#313131</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="save_trim_video_color">#FFA200</color>
 </resources>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/btCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_6sdp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+            <TextView
+                android:id="@+id/videoEditoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Video Trim"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        android:layout_below="@+id/tool_bar"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <VideoView
+            android:id="@+id/video_loader2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/icon_video_play_trim"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_play"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <!--152-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/bottomlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtstartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="00:00"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/txtrunningTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:text="00:00"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtendTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/txtstartTime"
+                    android:layout_marginRight="10dp"
+                    android:text="00:00"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:background="@android:color/transparent">
+
+                <SeekBar
+                    android:id="@+id/handlerTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:max="1000"
+                    android:progressDrawable="@android:color/transparent"
+                    android:secondaryProgress="0"
+                    android:thumb="@drawable/apptheme_text_select_handle_middle"
+                    android:visibility="gone" />
+
+                <com.veeradeveloper.videotrimmer.view.ProgressBarView
+                    android:id="@+id/timeVideoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/handlerTop" />
+
+                <com.veeradeveloper.videotrimmer.view.TimeLineView
+                    android:id="@+id/timeLineView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_below="@+id/timeVideoView" />
+
+                <com.veeradeveloper.videotrimmer.view.RangeSeekBarView
+                    android:id="@+id/timeLineBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignTop="@+id/timeLineView" />
+
+                <com.veeradeveloper.videotrimmer.view.ProgressBarView
+                    android:id="@+id/timeVideoView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/timeLineBar" />
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_save_trim"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout"
+                android:text="Trim Video"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
