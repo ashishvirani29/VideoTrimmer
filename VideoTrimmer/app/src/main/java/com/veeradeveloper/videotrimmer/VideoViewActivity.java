@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 import java.io.File;
@@ -31,6 +32,9 @@ public class VideoViewActivity extends AppCompatActivity {
 
         videoView = (VideoView) findViewById(R.id.videoview);
         videoView.setVideoPath(videoPath);
+        MediaController mediaController = new MediaController(VideoViewActivity.this);
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
