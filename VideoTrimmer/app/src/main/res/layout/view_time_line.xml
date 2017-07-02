@@ -45,7 +45,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/linearLayout"
         android:layout_below="@+id/tool_bar"
-        android:background="@color/white"
+        android:background="@color/black"
         android:gravity="center"
         android:orientation="vertical">
 
