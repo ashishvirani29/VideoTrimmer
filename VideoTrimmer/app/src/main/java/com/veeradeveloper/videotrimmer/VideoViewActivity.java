@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.VideoView;
@@ -17,6 +18,7 @@ import java.io.File;
 
 public class VideoViewActivity extends AppCompatActivity {
     VideoView videoView;
+    private static final String TAG = "VideoViewActivity";
     String videoPath;
 
     @Override
@@ -73,6 +75,7 @@ public class VideoViewActivity extends AppCompatActivity {
             videoView.pause();
             try {
                 new File(videoPath).delete();
+                Log.e(TAG, "onDestroy: Delete Video "+videoPath );
             } catch (Exception e) {
                 e.printStackTrace();
             }
